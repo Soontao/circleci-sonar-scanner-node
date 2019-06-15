@@ -3,10 +3,15 @@ FROM openjdk:8-jre-slim
 ENV SONAR_SCANNER_VERSION 3.3.0.1492
 ENV SONAR_OPTS ''
 
-RUN apt-get update && apt-get install -y wget git openssh-client unzip nodejs build-essential
+RUN apt-get update && apt-get install -y wget git openssh-client unzip build-essential
+
+RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+RUN source ~/.bashrc
+
+RUN nvm install --lts
 
 RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip
-RUN apt-get remove -y wget && apt-get purge
 
 RUN unzip sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux
 
