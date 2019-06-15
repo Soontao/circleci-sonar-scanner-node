@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y wget git openssh-client unzip build-ess
 
 RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
-RUN source ~/.bashrc
+RUN bash source ~/.bashrc
 
 RUN nvm install --lts
 
