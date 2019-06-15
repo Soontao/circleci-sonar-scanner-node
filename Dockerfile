@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y wget git openssh-client unzip build-ess
 
 RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
-ENV NVM_DIR="$HOME/.nvm"
+ENV NVM_DIR="/root/.nvm"
 
 RUN . $NVM_DIR/nvm.sh
 
