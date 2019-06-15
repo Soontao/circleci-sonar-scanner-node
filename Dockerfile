@@ -4,7 +4,7 @@ ENV SONAR_SCANNER_VERSION 3.3.0.1492
 ENV SONAR_OPTS ''
 
 RUN wget -qO- https://deb.nodesource.com/setup_8.x | bash
-RUN apt-get update && apt-get install -y wget git openssh-client unzip nodejs build-essential
+RUN apt-get update && apt-get install -y wget git openssh-client unzip nodejs npm build-essential
 
 RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip
 RUN apt-get remove -y wget && apt-get purge
