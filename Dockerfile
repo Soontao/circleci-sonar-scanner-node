@@ -1,5 +1,7 @@
 FROM openjdk:8-jre-slim
 
+SHELL ["/bin/bash", "-c"]
+
 ENV SONAR_SCANNER_VERSION 3.3.0.1492
 ENV SONAR_OPTS ''
 
